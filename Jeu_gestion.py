@@ -20,6 +20,7 @@ class Parcelle_1 :
         self.__type = plante
         self.__etat = 0
         self.__choix = 0
+        self.__compte_jour = 0
         self.__grille = [".",".",".",".",".",".",".",".","."]
     def grille_parcelle (self):
 
@@ -80,23 +81,35 @@ class Parcelle_1 :
             print("")
 
     def changement_etat (self):
-        print("")
-        print("1) Planter des graines dans la parcelle ? ")
-        print("2) Arroser votre parcelle ? ")
-        print("3) Mettre de l'engrais ? ")
-        print("4) Récolter la parcelle ? ")
-        print("")
-        self.__choix = int(input("Que voulez vous faire ? "))
-        print("")
-        print("")
-        if self.__choix == 1 :
-            self.__etat = 1
-        if self.__choix == 2 :
-            self.__etat = 2
-        if self.__choix == 3 :
-            self.__etat = 3
-        if self.__choix == 4 :
-            self.__etat = 4
+
+            print("")
+            print("1) Planter des graines dans la parcelle ? ")
+            print("2) Arroser votre parcelle ? ")
+            print("3) Mettre de l'engrais ? ")
+            print("4) Récolter la parcelle ? ")
+            print("5) Aller se coucher ? ")
+            print("")
+            self.__choix = int(input("Que voulez vous faire ? "))
+            print("")
+            print("")
+
+            if self.__choix == 1 :
+                self.__etat = 1
+
+            if self.__choix == 2 and self.__compte_jour == 2 :
+                self.__etat = 2
+            if self.__choix == 2 and self.__etat == 0 :
+                print("Vous n'avez pas encore planté de graine !")
+
+            if self.__choix == 3 and  self.__compte_jour == 3 :
+                self.__etat = 3
+            if self.__choix == 3 and self.__etat == 0 and 1: 
+                print("Vous ne pouvez pas mettre d'engrais tant que vous n'avez pas arroser votre parcelle !")
+
+            if self.__choix == 4 and self.__compte_jour == 4 :
+                self.__etat = 4
+            if self.__choix == 4 and self.__etat == 0 and 2 :
+                print("Votre graine ne poussera pas tant que vous n'avez pas mis d'engrais !")
 
 
     def etat_parcelle (self):
@@ -114,8 +127,7 @@ class Parcelle_1 :
             self.__grille = ["࿈","࿈","࿈","࿈","࿈","࿈","࿈","࿈","࿈"]
             
             
-            
-            
+
 
 
 
@@ -124,6 +136,7 @@ parcelle_1.grille_parcelle()
 parcelle_1.changement_etat()
 parcelle_1.etat_parcelle()
 parcelle_1.grille_parcelle()
+print("⌚")
 
 
 
