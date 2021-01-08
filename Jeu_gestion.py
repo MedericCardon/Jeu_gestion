@@ -22,7 +22,8 @@ class Parcelle_1 :
         self.__choix = 0
         self.__grille = [".",".",".",".",".",".",".",".","."]
     def grille_parcelle (self):
-        if self.__etat == 0 :
+
+        if self.__etat == 0 or 1:
             print("")
             print("   ",self.__type)
             print("")
@@ -38,18 +39,45 @@ class Parcelle_1 :
 
         if self.__etat == 2 :
             print("")
-            print("     ",self.__type)
+            print("      ",self.__type)
             print("")
-            print("====================")
-            print("||",Fore.BLUE+self.__grille[0],Style.RESET_ALL,"||",Fore.BLUE+self.__grille[1],Style.RESET_ALL,"||",Fore.BLUE+self.__grille[2],Style.RESET_ALL,"||")
-            print("====================")
-            print("||",Fore.BLUE+self.__grille[3],Style.RESET_ALL,"||",Fore.BLUE+self.__grille[4],Style.RESET_ALL,"||",Fore.BLUE+self.__grille[5],Style.RESET_ALL,"||")
-            print("====================")
-            print("||",Fore.BLUE+self.__grille[6],Style.RESET_ALL,"||",Fore.BLUE+self.__grille[7],Style.RESET_ALL,"||",Fore.BLUE+self.__grille[8],Style.RESET_ALL,"||")
-            print("====================")
+            print("=======================")
+            print("|| ",Fore.BLUE+self.__grille[0],Style.RESET_ALL,"|| ",Fore.BLUE+self.__grille[1],Style.RESET_ALL,"|| ",Fore.BLUE+self.__grille[2],Style.RESET_ALL,"||")
+            print("=======================")
+            print("|| ",Fore.BLUE+self.__grille[3],Style.RESET_ALL,"|| ",Fore.BLUE+self.__grille[4],Style.RESET_ALL,"|| ",Fore.BLUE+self.__grille[5],Style.RESET_ALL,"||")
+            print("=======================")
+            print("|| ",Fore.BLUE+self.__grille[6],Style.RESET_ALL,"|| ",Fore.BLUE+self.__grille[7],Style.RESET_ALL,"|| ",Fore.BLUE+self.__grille[8],Style.RESET_ALL,"||")
+            print("=======================")
             print("")
             print("")
 
+        if self.__etat == 3 :
+            print("")
+            print("      ",self.__type)
+            print("")
+            print("=======================")
+            print("|| ",Fore.YELLOW+self.__grille[0],Style.RESET_ALL,"|| ",Fore.YELLOW+self.__grille[1],Style.RESET_ALL,"|| ",Fore.YELLOW+self.__grille[2],Style.RESET_ALL,"||")
+            print("=======================")
+            print("|| ",Fore.YELLOW+self.__grille[3],Style.RESET_ALL,"|| ",Fore.YELLOW+self.__grille[4],Style.RESET_ALL,"|| ",Fore.YELLOW+self.__grille[5],Style.RESET_ALL,"||")
+            print("=======================")
+            print("|| ",Fore.YELLOW+self.__grille[6],Style.RESET_ALL,"|| ",Fore.YELLOW+self.__grille[7],Style.RESET_ALL,"|| ",Fore.YELLOW+self.__grille[8],Style.RESET_ALL,"||")
+            print("=======================")
+            print("")
+            print("")
+
+        if self.__etat == 4 :
+            print("")
+            print("      ",self.__type)
+            print("")
+            print("=======================")
+            print("|| ",Fore.GREEN+self.__grille[0],Style.RESET_ALL,"|| ",Fore.GREEN+self.__grille[1],Style.RESET_ALL,"|| ",Fore.GREEN+self.__grille[2],Style.RESET_ALL,"||")
+            print("=======================")
+            print("|| ",Fore.GREEN+self.__grille[3],Style.RESET_ALL,"|| ",Fore.GREEN+self.__grille[4],Style.RESET_ALL,"|| ",Fore.GREEN+self.__grille[5],Style.RESET_ALL,"||")
+            print("=======================")
+            print("|| ",Fore.GREEN+self.__grille[6],Style.RESET_ALL,"|| ",Fore.GREEN+self.__grille[7],Style.RESET_ALL,"|| ",Fore.GREEN+self.__grille[8],Style.RESET_ALL,"||")
+            print("=======================")
+            print("")
+            print("")
 
     def changement_etat (self):
         print("")
@@ -65,13 +93,25 @@ class Parcelle_1 :
             self.__etat = 1
         if self.__choix == 2 :
             self.__etat = 2
+        if self.__choix == 3 :
+            self.__etat = 3
+        if self.__choix == 4 :
+            self.__etat = 4
+
+
     def etat_parcelle (self):
         if self.__etat == 1 :
-            print("Vous avez plantez des graines dans votre parcelle")
+            print("Vous avez plantez des graines dans votre parcelle.")
             self.__grille = ["*","*","*","*","*","*","*","*","*"]
         if self.__etat == 2 :
             self.__grille = ["*","*","*","*","*","*","*","*","*"]
             print("Vous avez arroser votre parcelle.")
+        if self.__etat == 3 :
+            self.__grille = ["*","*","*","*","*","*","*","*","*"]
+            print("Vous avez mis de l'engrais sur votre parcelle.")
+        if self.__etat == 4 :
+            print("Vous avez recolté votre parcelle")
+            self.__grille = ["࿈","࿈","࿈","࿈","࿈","࿈","࿈","࿈","࿈"]
             
             
             
