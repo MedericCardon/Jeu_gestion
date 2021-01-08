@@ -20,8 +20,9 @@ class Parcelle_1 :
         self.__type = plante
         self.__etat = 0
         self.__choix = 0
-        self.__compte_jour = 0
+        self.__compte_jour = 1
         self.__grille = [".",".",".",".",".",".",".",".","."]
+
     def grille_parcelle (self):
 
         if self.__etat == 0 or 1:
@@ -111,8 +112,12 @@ class Parcelle_1 :
             if self.__choix == 4 and self.__etat == 0 and 2 :
                 print("Votre graine ne poussera pas tant que vous n'avez pas mis d'engrais !")
 
+            if self.__choix == 5 :
+                self.__compte_jour += 1
+                print("Vous pouvez de nouveau interagir avec votre parcelle.")
 
     def etat_parcelle (self):
+
         if self.__etat == 1 :
             print("Vous avez plantez des graines dans votre parcelle.")
             self.__grille = ["*","*","*","*","*","*","*","*","*"]
@@ -136,6 +141,7 @@ parcelle_1.grille_parcelle()
 parcelle_1.changement_etat()
 parcelle_1.etat_parcelle()
 parcelle_1.grille_parcelle()
+
 print("⌚")
 
 
