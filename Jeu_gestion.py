@@ -7,6 +7,36 @@ class Joueur :
         self.__graines = 0
     
 
+class Parcelle_1 :
+    def __init__(self,plante):
+        self.__type = plante
+        self.__etat = 0
+        self.__choix = 0
+        self.__grille = [".",".",".",".",".",".",".",".","."]
+    def grille_parcelle (self):
+        print(self.__type)
+        print("=================")
+        print("||",self.__grille[0],"||",self.__grille[1],"||",self.__grille[2],"||")
+        print("=================")
+        print("||",self.__grille[3],"||",self.__grille[4],"||",self.__grille[5],"||")
+        print("=================")
+        print("||",self.__grille[6],"||",self.__grille[7],"||",self.__grille[8],"||")
+        print("=================")
+    def changement_etat (self):
+        self.__choix = int(input("1) Planter des graine"))
+        if self.__choix == 1 :
+            self.__etat = 1
+    def etat_parcelle (self):
+        if self.__etat == 1 :
+            print("Vous avez plantez des graines dans votre parcelle")
+            self.__grille = ["*","*","*","*","*","*","*","*","*"]
+            
+    
+
+
+
+
+
 class Parcelle :
     def __init__ (self,nom_parcelle):
         self.__nom = nom_parcelle
@@ -46,8 +76,16 @@ class Parcelle :
 
 
 
-jack = Joueur("Jack")
 
-parcelle1 = Parcelle("Parcelle1")
-parcelle1.choix_joueur()
+
+parcelle_1=Parcelle_1("Carottes")
+parcelle_1.grille_parcelle()
+parcelle_1.changement_etat()
+parcelle_1.etat_parcelle()
+parcelle_1.grille_parcelle()
+
+
+#jack = Joueur("Jack")
+#parcelle1 = Parcelle("Parcelle1")
+#parcelle1.choix_joueur()
 
